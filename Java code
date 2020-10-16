@@ -1,0 +1,140 @@
+
+/**
+ * Write a description of class CarpetCostEstimator here.
+ * Answer to TMA01 Question 1
+ * @author Colin Riddle 
+ * @version 20/11/2019
+ */
+public class CarpetCostEstimator
+{
+  /* Instance variables */
+   private double price;
+   private double labourCharge;
+   private String postCode;
+   private int length;
+   private int width;
+   private int area;
+   
+   /** Constructor for objects of class CarpetCostEstimator which initialises
+    * price in £ per square metre to -1.0 and labourCharge to value of argument
+    * and postCode to "xxx xxx".
+    */
+   public CarpetCostEstimator()
+   {
+      super();
+      this.labourCharge = 1.0;
+      this.price = -1.0;
+      this.postCode = "xxx xxx";
+      this.length = 0;
+      this.width = 0;
+      this.area = 0;
+   }
+   
+   /**
+    * sets price in £ per square metre
+    */
+  public void setprice(double price)
+  {
+    this.price = price;
+  }
+  
+  /**
+   * returns the price set
+   */
+  public double getprice()
+  {
+     return this.price;
+  }
+  
+  /**
+   * sets labourCharge cost in £ per square metre
+   */
+  public void setlabourCharge(double labourCharge)
+  {
+     this.labourCharge = labourCharge;
+  }
+  
+  /**
+   * returns set labourCharge
+   */
+  public double getlabourCharge()
+  {
+     return this.labourCharge;
+  }
+  
+  /**
+   * sets the postCode
+   */
+  public void setpostCode(String postCode)
+  {
+     this.postCode = postCode;
+  }
+  
+  /**
+   * returns the inputed postCode
+   */
+  public String getpostCode()
+  {
+     return this.postCode;
+  }
+  
+  /**
+   * sets room length in metres
+   */
+  public void setlength(int length)
+  {
+     this.length = length;
+  }
+  
+   /**
+   * sets room width in metres
+   */
+  public void setwidth(int width)
+  {
+     this.width = width;
+  }
+  
+  /**
+   * method for calculating carpet cost
+   */
+  public double calculateCarpetCost(double carpetCost)
+  {
+   area = length * width;
+   carpetCost = area * price;
+   return carpetCost;
+  }
+  
+    /**
+   * method for calculating fitting cost~?
+   */
+  public double calculateFittingCost(double fittingCost, double multiplier)
+  {
+   area = length * width;
+   fittingCost = area * labourCharge * multiplier;
+   return fittingCost;
+  }
+  
+  /**
+   * method for calculating postcode expensive areas.
+   */
+  public double costMultiplier(double multiplier)
+  {
+     multiplier = 1.0;
+     if (postCode != null);
+     if (postCode.toUpperCase().startsWith("WC1A") || postCode.toUpperCase().startsWith("EC1A"))
+     multiplier = 1.2;
+     return multiplier;
+   }
+   
+   /**
+    * 
+    */
+   public void printCostTable()
+   {
+      String tab = "\t";
+      System.out.println("price" + tab + "carpet" + tab + "fitting");
+   }
+ 
+      
+}   
+
